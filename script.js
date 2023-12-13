@@ -7,6 +7,8 @@ const orderFormContainer = document.querySelector('.order-form-container');
 const orderInfoContainer = document.querySelector('.order-info-container');
 const confirmOrderButton = document.querySelector('.confirm-order-button');
 
+
+
 const categoriesExample = [
     { id: 1, name: 'Clothes', products: ['Dresses', 'Tops', 'Jeans', 'Skirts'] },
     { id: 2, name: 'Shoes', products: ['Boots', 'Loafers', 'Sneakers', 'Ballet flats'] },
@@ -33,16 +35,17 @@ function showProducts(products) {
 }
 
 function showProductInfo(product) {
-    productName.textContent = 'Product: ${product}';
+    productName.textContent = `Product: ${product}`;
     productsInfoContainer.style.display = 'block';
+   
     buyButton.addEventListener('click', () => {
         purchaseProduct(product);
-        showOrderForm();
+        showOrderForm() ;
     });
 }
 
 function purchaseProduct(product) {
-    alert(`You have purchased: ${product}`);
+    // alert(`You have purchased: ${product}`);
     productsInfoContainer.style.display = 'none';
 }
 
@@ -71,7 +74,14 @@ confirmOrderButton.addEventListener('click', () => {
 
 function showOrderInfo(fullName, city, delivery, paymentMethod, quantity) {
     orderFormContainer.style.display = 'none';
+    orderInfoContainer.innerHTML = `
+    <p>Full Name ${fullName}</p>
+    <p>City: ${city}</p>
+    <p>Delivery:  ${delivery}</p>
+    <p>Payment Method:  ${paymentMethod}</p>
+    <p> Quantity:  ${quantity}</p>
+    <p> Comment:  ${comment}</p>
+`;
 }
-
 
 generateCategories();
