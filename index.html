@@ -10,9 +10,11 @@
     <div class="container">
     <div class="categories">Categories</div>
     <div class="products">Products</div>
-    <div class="product-info">
+
+        <div class="product-info d-none">
         <h3>Product Information</h3>
         <p id="product-name"></p>
+    </div>
       
         <button class="buy-button">Buy</button>
         <div class="order-form-container">
@@ -47,6 +49,11 @@
         
     </div>
     <div class="order-info-container"></div>
+</div>
+<button class="my-orders-button">My Orders</button>
+<div class="order-list-container d-none">
+    <h2>My Orders</h2>
+    <ul id="order-list"></ul>
 </div>
 </div>
     <script src="./script.js"></script>
